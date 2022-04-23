@@ -1,3 +1,7 @@
+import 'package:bytebank_persistencia/screens/contact_form.dart';
+import 'package:bytebank_persistencia/screens/contacts_list.dart';
+import 'package:bytebank_persistencia/screens/dashboard.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,16 +15,17 @@ class ByteBankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Dashboard'),
-        ),
-        body: Column(
-          children: [
-            Image.network(''),
-          ],
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+        secondaryHeaderColor: Colors.green,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blueAccent[700],
+          textTheme: ButtonTextTheme.primary,
         ),
       ),
+      home: Dashboard(),
     );
   }
 }
+
+
