@@ -1,11 +1,19 @@
-import 'package:bytebank_persistencia/screens/contact_form.dart';
-import 'package:bytebank_persistencia/screens/contacts_list.dart';
 import 'package:bytebank_persistencia/screens/dashboard.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'database/app_database.dart';
+import 'models/contacts.dart';
+
 
 void main() {
   runApp(const ByteBankApp());
+
+  // for (var i = 1 ; i<= 1000; i++) {
+  //   save(Contact(1, 'Anderson$i', i*100));
+  // }
+  //save(Contact(1, 'Anderson2', 2000)).then((id){});
+   // findAll().then((contacts) => debugPrint(contacts.toString()));
+  //});
 }
 
 class ByteBankApp extends StatelessWidget {
@@ -23,7 +31,7 @@ class ByteBankApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: Dashboard(),
+      home: const Dashboard(),
     );
   }
 }

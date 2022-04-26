@@ -1,9 +1,8 @@
 import 'package:bytebank_persistencia/models/contacts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ContactForm extends StatefulWidget {
-  ContactForm({Key? key}) : super(key: key);
+  const ContactForm({Key? key}) : super(key: key);
 
   @override
   State<ContactForm> createState() => _ContactFormState();
@@ -17,7 +16,7 @@ class _ContactFormState extends State<ContactForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New contact'),
+        title: const Text('New contact'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Padding(
@@ -45,7 +44,7 @@ class _ContactFormState extends State<ContactForm> {
                 ),
                 keyboardType: TextInputType.number,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               SizedBox(
                 width: double.maxFinite, // Tamanho do botão
                 child: ElevatedButton(
@@ -53,7 +52,7 @@ class _ContactFormState extends State<ContactForm> {
                     final String? name = _nameController.text;
                     final int? accountNumber = int.tryParse(_accountController.text);
                     if (name != null && accountNumber != null) {
-                      final Contact newContact = Contact(name, accountNumber);
+                      final Contact newContact = Contact(0, name, accountNumber);
                       Navigator.pop(context, newContact);
                     }
 

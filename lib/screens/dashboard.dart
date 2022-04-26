@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'contacts_list.dart';
 
-const String img_logo = 'images/bytebank_logo.png';
+const String imgLogo = 'images/bytebank_logo.png';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class Dashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Dashboard'),
+        title: const Text('Dashboard'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,11 +31,11 @@ class Dashboard extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => ContactList(),
+                builder: (context) => const ContactList(),
               ),
             );
           },
-          child: Container(
+          child: SizedBox(
             width: 120,
             height: 100,
             child: Padding(
@@ -69,7 +69,7 @@ class Dashboard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Image.asset(
-        img_logo,
+        imgLogo,
         alignment: AlignmentDirectional.center,
       ),
     );
