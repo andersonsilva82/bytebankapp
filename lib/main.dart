@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'database/app_database.dart';
 import 'models/contacts.dart';
 
-
+// codigo refatorado
 void main() {
   runApp(const ByteBankApp());
 
