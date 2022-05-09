@@ -1,17 +1,17 @@
+import 'package:bytebank_persistencia/database/dao/contact_dao.dart';
 import 'package:bytebank_persistencia/models/contacts.dart';
 import 'package:bytebank_persistencia/screens/contact_form.dart';
 import 'package:flutter/material.dart';
 
-import '../database/app_database.dart';
-
 class ContactList extends StatefulWidget {
-  const ContactList({Key? key}) : super(key: key);
-
+  ContactList({Key? key}) : super(key: key);
   @override
   State<ContactList> createState() => _ContactListState();
 }
 
 class _ContactListState extends State<ContactList> {
+  final ContactDao _dao = ContactDao();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +19,9 @@ class _ContactListState extends State<ContactList> {
         title: const Text('Contacts'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: FutureBuilder(
-        initialData: [],
-        future: findAll(),
+      body: FutureBuilder<List<Contact>>(
+        initialData: const [],
+        future: _dao.findAll(),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.waiting:

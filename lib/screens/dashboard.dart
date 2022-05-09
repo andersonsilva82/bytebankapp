@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'contacts_list.dart';
 
 const String imgLogo = 'images/bytebank_logo.png';
@@ -31,7 +30,7 @@ class Dashboard extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const ContactList(),
+                builder: (context) => ContactList(),
               ),
             );
           },

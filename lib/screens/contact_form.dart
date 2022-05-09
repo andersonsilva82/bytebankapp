@@ -1,7 +1,7 @@
 import 'package:bytebank_persistencia/models/contacts.dart';
 import 'package:flutter/material.dart';
 
-import '../database/app_database.dart';
+import '../database/dao/contact_dao.dart';
 
 class ContactForm extends StatefulWidget {
   const ContactForm({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class ContactForm extends StatefulWidget {
 class _ContactFormState extends State<ContactForm> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _accountController = TextEditingController();
-
+  final ContactDao _dao = ContactDao();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class _ContactFormState extends State<ContactForm> {
                     if (name != null && accountNumber != null) {
                       final Contact newContact =
                           Contact(0, name, accountNumber);
-                      save(newContact)
+                      _dao.save(newContact)
                           .then((id) => Navigator.pop(context, newContact));
                     }
                   },
